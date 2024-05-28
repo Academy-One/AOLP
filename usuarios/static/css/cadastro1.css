@@ -1,0 +1,245 @@
+/* ==== */
+/* Body */
+/* ==== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    color: #222;
+    font-family: 'Poppins';
+}
+
+/* ========== */
+/* Formulario */
+/* ========== */
+
+.logo--alt-2 {
+    filter:brightness(10%);
+}
+
+.form-cadastro{
+    padding: 0;
+    /* background-image:  url(IMGS/login-cadastro.jpg); */
+    /* background-size: cover;
+    background-position:center; */
+
+    display: flex;
+   
+    flex-direction: column;
+   
+    align-items: center;
+    gap: 1.2rem;
+    
+    height: 100vh;
+    border: none;
+   
+}
+
+
+.text-login{
+    font-size: 3.5rem;
+    font-weight: 600;
+    /* margin-top: 0px; */
+}
+
+.container-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 32rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field input {
+    border: 1.55px solid #222;
+}
+
+.field input:focus {
+    outline: 1.55px solid #1D267D;
+}
+
+.field label {
+    font-size: 1.6rem;
+}
+
+
+.radio-fields-box {
+    display: flex;
+
+    gap: 2.4rem;
+}
+
+.radio-field {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.2rem;
+}
+
+.radio-field label {
+    font-size: 1.6rem;
+}
+
+.radio-field input {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.inputs {
+    border: 1px solid transparent
+}
+
+.inputs:focus {
+    outline: 2px solid #1D267D;
+}
+
+.session--error,
+.mensagem--erro {
+    width: auto;
+   
+    margin-left: 1.2rem;
+    font-size: 1.4rem;
+    color: red;
+}
+
+.btn-radio-1 .btn-radio-2{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+form img{
+    margin-top: 2.5rem;
+}
+
+input {
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    width: 30rem;
+    height: 3rem;
+    padding: 1.6rem 0 1.6rem 1.2rem;
+    margin: 0.3rem;
+}
+
+.container-criar-conta{
+    margin-top: 16%;
+}
+
+.container-criar-conta a {
+    text-decoration: none;
+    color:#1D267D;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    font-family: 'Poppins';
+    cursor: pointer;
+    border: 2px solid transparent;
+    
+    border-radius: 10px;
+}
+
+.btn {  
+    background-color: #35BEF0;
+    border-radius: 11px;
+    color: #f1f3f5;
+    padding: 1rem 1.4rem;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    
+    transition: 0.3s all;
+}
+
+.btn:hover, 
+.btn:active {
+    border: 2px solid #2da0ca;
+    background-color: #f1f3f5;
+    color: #2da0ca;
+ 
+}
+
+.spanError{
+    font-size: 3.4rem;
+    color: red;
+    display: none;
+}
+
+
+.outer-ring {
+    display: flex;
+    justify-content: center;
+  
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  border-top: 2px solid #35BEF0;
+  z-index: 9999;
+  width: 24px;
+  height: 24px;
+  box-shadow: 1px rgba(0, 0, 0, 0.2);
+  animation: spiner 1s infinite linear;
+}
+
+@keyframes spiner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ====== */
+/* footer */
+/* ====== */
+
+
+.footer {
+    background-color: #1D267D;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+}
+
+.footer img{
+    width: 17rem;
+    height:auto;
+
+    margin: 0;
+}
+
+.container-footer{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        padding: 1.5rem;
+    }
+}

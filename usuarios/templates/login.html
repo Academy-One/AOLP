@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="projeto_AOLP\login\static\css\login.css" />
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Entrar</title>
+  </head>
+  <body>
+    <form action="{% url 'logar' %}" method="post">
+      <div class="container">
+        <div class="card">
+          {% csrf_token %}
+          <h1>Entrar</h1>
+          <div id="msgError"></div>
+          <div class="label-float">
+            <input type="text" id="email" name="email" value="{{ email }}" paceholder="" required />
+            <label id="emailLabel" for="email">E-mail</label>
+          </div>
+          <div class="label-float">
+            <input type="password" id="senha" name="senha" paceholder="" required />
+            <label id="senhaLabel" for="senha">Senha</label>
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </div>
+          <div class="justify-center">
+            <button onclick="entrar()">Entrar</button>
+          </div>
+          {% if error_msg %}
+            <p>{{ error_msg }}</p>
+          {% endif %}
+          <div class="justify-center">
+            <hr />
+          </div>
+          <p>
+            Não tem uma conta?
+            <a href="{% url 'cadastro' %}">
+              Cadastre-se
+            </a>
+          </p>
+        </div>
+      </div>
+    </form>
+
+    <script src="{% static "js/login" %} %}"></script>
+    <script src="{% static 'js/limparCache.js' %}"></script>
+  </body>
+</html>

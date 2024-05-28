@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/projeto_cad_usuarios/app_cad_usuarios/static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="css/backgroud.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Meu Site</title>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"> <a href="#home">AOLP</a></label>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% if usuario %}
+                <li><a href="{% url 'logout' %}?origem={{ request.path }}">LOG-OUT</a></li>
+                <li>{{ usuario.nome }}</li>
+                <img class="perfil_img" src="imagens/{{ foto_perfil.imagem }}" alt="perfil_img" style="height: 50px; width: 50px; border-radius: 100%;">
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div id="home-container">
+            <!--<a href="" class="btn"></a> -->
+        </div>
+    </header>
+    <section id="DUVIDAS">
+        <div class="headline">DUVIDAS FREQUENTES</div>
+            <div id="Du">
+                <details>
+                        <summary><H1>OS CURSOS SÃO PAGOS ?</H1></summary>
+                        <p> Não! Os Cursos não são pagos! </p>
+            </details>
+            </div>
+            
+    </section>
+
+    <section id="SEDE">
+        <div class="headline">NOSSA SEDE</div>
+        <div class="mapBox">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.6578967955606!2d-46.533387889195104!3d-23.47280147877257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef55eb2540001%3A0xdf80bffdcd8b95f!2sEniac!5e0!3m2!1spt-BR!2sbr!4v1702907719833!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <footer id="footer">
+        <p>Copyright 2023 - Todos os Direitos reservados</p>
+        <p>Feito por alguem</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/90c229ff89.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
